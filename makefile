@@ -3,12 +3,14 @@ CFLAGS := ${CFLAGS}
 
 SRC := $(wildcard ./src/*.c) 
 
+INC := -I./header/
+
 TARGET := calculator
 
 all: $(TARGET)
 
 $(TARGET):$(SRC)
-	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@ -Wl,--hash-style=gnu
+	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@ $(INC) -Wl,--hash-style=gnu
 
 install:
 	install -d ${DESTDIR}${BINDIR}
