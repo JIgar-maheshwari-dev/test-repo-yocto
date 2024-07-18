@@ -1,2 +1,9 @@
 #include <stdio.h>
-#define VAL 1
+
+
+int add(int, int);
+int sub(int, int);
+int mul(int, int);
+int div(int, int);
+
+
