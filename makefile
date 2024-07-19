@@ -1,14 +1,14 @@
 CC := ${CC}
 CFLAGS := ${CFLAGS}
 
-SRC := $(wildcard ./src/*.c) 
+SRC := $(wildcard ./*.c) 
 
-TARGET := calculator
+TARGET := bbappend
 
 all: $(TARGET)
 
 $(TARGET):$(SRC)
-	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@ -Wl,--hash-style=gnu
+	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@ $(INC) -Wl,--hash-style=gnu
 
 install:
 	install -d ${DESTDIR}${BINDIR}
@@ -16,3 +16,4 @@ install:
 
 clean:
 	rm -f $(TARGET)
+
